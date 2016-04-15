@@ -177,7 +177,6 @@ C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
   <ItemGroup>
     <ClCompile Include="..\..\..\addons\ofxObjLoader\libs\glm.c" />
     <ClCompile Include="..\..\..\addons\ofxObjLoader\src\ofxObjLoader.cpp" />
-    <ClCompile Include="speaker_sapi.cpp" />
     <ClCompile Include="src\abstactmorpher.cpp" />
     <ClCompile Include="src\abstractspeaker.cpp" />
     <ClCompile Include="src\cpu_morpher.cpp" />
@@ -193,12 +192,12 @@ C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
     <ClCompile Include="..\..\..\addons\ofxGui\src\ofxToggle.cpp" />
     <ClCompile Include="src\simplespeaker.cpp" />
     <ClCompile Include="src\simplespeaker_sapi.cpp" />
+    <ClCompile Include="src\speaker_sapi.cpp" />
     <ClCompile Include="src\stopwath.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\addons\ofxObjLoader\libs\glm.h" />
     <ClInclude Include="..\..\..\addons\ofxObjLoader\src\ofxObjLoader.h" />
-    <ClInclude Include="speaker_sapi.h" />
     <ClInclude Include="src\abstactmorpher.h" />
     <ClInclude Include="src\abstractspeaker.h" />
     <ClInclude Include="src\cpu_morpher.h" />
@@ -214,6 +213,7 @@ C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
     <ClInclude Include="..\..\..\addons\ofxGui\src\ofxToggle.h" />
     <ClInclude Include="src\simplespeaker.h" />
     <ClInclude Include="src\simplespeaker_sapi.h" />
+    <ClInclude Include="src\speaker_sapi.h" />
     <ClInclude Include="src\stopwath.h" />
   </ItemGroup>
   <ItemGroup>

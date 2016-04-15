@@ -1,18 +1,20 @@
-#include "string"
+#include <string>
+#include <memory>
+
+#include "speaker_sapi.h"
+#include "cpu_morpher.h"
 
 #include "ofApp.h"
-
-#include "cpu_morpher.h"
-//#include "simplespeaker.h"
-#include "simplespeaker_sapi.h"
-#include <memory>
 
 //--------------------------------------------------------------
 void ofApp::setup() {
 	std::unique_ptr<AbstactMorpher> tmp(new CPU_Morpher("data\\"));
 //    speaker = new SimpleSpeakerSapi();
 	//speaker = new SimpleSpeaker();
-	morpher = tmp.release();
+    speaker = new SpeakerSAPI();
+    speaker->init();
+    speaker->set_voice(1);
+    morpher = tmp.release();
 
 	gui.setup("par_group");
 	gui.add(w1.set("w1", 0, 0, 1.0));
@@ -28,12 +30,12 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update() {
-		speaker->update();
-		v1.set(speaker->get_previous());
-		v2.set(speaker->get_current());
-		w1.set(speaker->get_previous_w());
-		w2.set(speaker->get_curren_w());
-	morpher->set_current(v1, w1 * .7, v2, w2 * .7);
+	speaker->update();
+	v1.set(speaker->get_previous());
+	v2.set(speaker->get_current());
+	w1.set(speaker->get_previous_w());
+	w2.set(speaker->get_curren_w());
+	morpher->set_current(v1, w1 * .5, v2, w2 * .5);
 	morpher->update();
 }
 
@@ -60,7 +62,7 @@ void ofApp::draw() {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
-	speaker->speak(L"");
+	speaker->speak(L"At least nine people have died and more than 250 are injured after a powerful earthquake hit southern Japan, toppling buildings and cutting power supplies.");
 }
 
 //--------------------------------------------------------------

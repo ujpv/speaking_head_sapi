@@ -55,7 +55,9 @@
     <ClCompile Include="..\..\..\addons\ofxObjLoader\libs\glm.c">
       <Filter>addons\ofxObjLoader\libs</Filter>
     </ClCompile>
-    <ClCompile Include="speaker_sapi.cpp" />
+    <ClCompile Include="src\speaker_sapi.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -135,7 +137,9 @@
     <ClInclude Include="..\..\..\addons\ofxObjLoader\libs\glm.h">
       <Filter>addons\ofxObjLoader\libs</Filter>
     </ClInclude>
-    <ClInclude Include="speaker_sapi.h" />
+    <ClInclude Include="src\speaker_sapi.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

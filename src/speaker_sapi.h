@@ -1,5 +1,5 @@
 #pragma once
-#include "C:\of_v0.9.3_vs_release\apps\myApps\speakingHead\src\abstractspeaker.h"
+#include "abstractspeaker.h"
 #include <sphelper.h>
 class SpeakerSAPI :
     public AbstractSpeaker
