@@ -180,6 +180,7 @@ C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
     <ClCompile Include="src\abstactmorpher.cpp" />
     <ClCompile Include="src\abstractspeaker.cpp" />
     <ClCompile Include="src\cpu_morpher.cpp" />
+    <ClCompile Include="src\ini_loader.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="..\..\..\addons\ofxGui\src\ofxBaseGui.cpp" />
@@ -201,6 +202,7 @@ C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
     <ClInclude Include="src\abstactmorpher.h" />
     <ClInclude Include="src\abstractspeaker.h" />
     <ClInclude Include="src\cpu_morpher.h" />
+    <ClInclude Include="src\ini_loader.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="..\..\..\addons\ofxGui\src\ofxBaseGui.h" />
     <ClInclude Include="..\..\..\addons\ofxGui\src\ofxButton.h" />

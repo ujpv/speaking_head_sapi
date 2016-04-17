@@ -5,6 +5,7 @@
 
 #include "abstactmorpher.h"
 #include "abstractspeaker.h"
+#include "ini_loader.h"
 
 class ofApp : public ofBaseApp {
 
@@ -41,4 +42,7 @@ private:
 
 	ofTexture head_texture;
 	ofMesh    head;
+
+    INILoader m_ini_file;
+    const char const * INI_FILE_NAME = "options.ini";
 };

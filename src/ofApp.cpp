@@ -8,9 +8,9 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-	std::unique_ptr<AbstactMorpher> tmp(new CPU_Morpher("data\\"));
-//    speaker = new SimpleSpeakerSapi();
-	//speaker = new SimpleSpeaker();
+    m_ini_file.load(L"hello.ini");
+
+    std::unique_ptr<AbstactMorpher> tmp(new CPU_Morpher("data\\"));
     speaker = new SpeakerSAPI();
     speaker->init();
     speaker->set_voice(1);
