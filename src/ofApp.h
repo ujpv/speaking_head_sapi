@@ -6,6 +6,7 @@
 #include "abstactmorpher.h"
 #include "abstractspeaker.h"
 #include "ini_loader.h"
+#include "bot_client.h"
 
 class ofApp : public ofBaseApp {
 
@@ -25,6 +26,7 @@ public:
 	void windowResized(int w, int h);
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
+    void exit() override;
 
 	~ofApp();
 
@@ -45,4 +47,6 @@ private:
 
     INILoader m_ini_file;
     const char const * INI_FILE_NAME = "options.ini";
+
+    botClient client;
 };

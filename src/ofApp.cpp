@@ -8,7 +8,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-    m_ini_file.load(L"hello.ini");
+    m_ini_file.load(L"common.ini");
 
     std::unique_ptr<AbstactMorpher> tmp(new CPU_Morpher("data\\"));
     speaker = new SpeakerSAPI();
@@ -26,6 +26,10 @@ void ofApp::setup() {
 
 	cam.setDistance(3);
 	cam.setNearClip(1);
+
+    client.setup(m_ini_file.get_value("bot_ip"), 
+        ofToInt(m_ini_file.get_value("bot_port")));
+    client.startThread();
 }
 
 //--------------------------------------------------------------
@@ -108,6 +112,11 @@ void ofApp::windowResized(int w, int h) {
 //--------------------------------------------------------------
 void ofApp::gotMessage(ofMessage msg) {
 
+}
+
+void ofApp::exit()
+{
+    client.stopThread();
 }
 
 ofApp::~ofApp()

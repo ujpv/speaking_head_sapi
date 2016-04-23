@@ -95,9 +95,8 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;
-C:\of_v0.9.3_vs_release\addons\ofxObjLoader\src;
-C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;C:\of_v0.9.3_vs_release\addons\ofxObjLoader\src;C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs;
+C:\of_v0.9.3_vs_release\addons\ofxNetwork\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -115,9 +114,8 @@ C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;
-C:\of_v0.9.3_vs_release\addons\ofxObjLoader\src;
-C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;C:\of_v0.9.3_vs_release\addons\ofxObjLoader\src;C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs;
+C:\of_v0.9.3_vs_release\addons\ofxNetwork\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -135,9 +133,8 @@ C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;
-C:\of_v0.9.3_vs_release\addons\ofxObjLoader\src;
-C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;C:\of_v0.9.3_vs_release\addons\ofxObjLoader\src;C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs;
+C:\of_v0.9.3_vs_release\addons\ofxNetwork\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -158,9 +155,8 @@ C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;
-C:\of_v0.9.3_vs_release\addons\ofxObjLoader\src;
-C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxGui\src;C:\of_v0.9.3_vs_release\addons\ofxObjLoader\src;C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs;
+C:\of_v0.9.3_vs_release\addons\ofxNetwork\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -175,10 +171,15 @@ C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\addons\ofxNetwork\src\ofxTCPClient.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxNetwork\src\ofxTCPManager.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxNetwork\src\ofxTCPServer.cpp" />
+    <ClCompile Include="..\..\..\addons\ofxNetwork\src\ofxUDPManager.cpp" />
     <ClCompile Include="..\..\..\addons\ofxObjLoader\libs\glm.c" />
     <ClCompile Include="..\..\..\addons\ofxObjLoader\src\ofxObjLoader.cpp" />
     <ClCompile Include="src\abstactmorpher.cpp" />
     <ClCompile Include="src\abstractspeaker.cpp" />
+    <ClCompile Include="src\bot_client.cpp" />
     <ClCompile Include="src\cpu_morpher.cpp" />
     <ClCompile Include="src\ini_loader.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -197,10 +198,17 @@ C:\of_v0.9.3_vs_release\addons\ofxObjLoader\libs</AdditionalIncludeDirectories>
     <ClCompile Include="src\stopwath.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxNetwork.h" />
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxNetworkUtils.h" />
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxTCPClient.h" />
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxTCPManager.h" />
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxTCPServer.h" />
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxUDPManager.h" />
     <ClInclude Include="..\..\..\addons\ofxObjLoader\libs\glm.h" />
     <ClInclude Include="..\..\..\addons\ofxObjLoader\src\ofxObjLoader.h" />
     <ClInclude Include="src\abstactmorpher.h" />
     <ClInclude Include="src\abstractspeaker.h" />
+    <ClInclude Include="src\bot_client.h" />
     <ClInclude Include="src\cpu_morpher.h" />
     <ClInclude Include="src\ini_loader.h" />
     <ClInclude Include="src\ofApp.h" />
