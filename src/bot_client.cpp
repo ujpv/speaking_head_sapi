@@ -1,3 +1,6 @@
+#include <locale>
+#include <codecvt>
+
 #include "bot_client.h"
 #include "ofLog.h"
 
@@ -7,11 +10,13 @@ botClient::botClient()
 
 void botClient::threadedFunction()
 {
+    std::wstring_convert <std::codecvt_utf8 <wchar_t>> cv;
     while (isThreadRunning())
     {
         if (!client.isConnected()) {
             ofLog(OF_LOG_NOTICE, "Connection to %s:%d", ip.c_str(), port);
             client.setup(ip, port);
+            client.setMessageDelimiter("\r\n");
         }
         if (client.isConnected()) {
             if (!out_mess.empty()) {
@@ -21,10 +26,14 @@ void botClient::threadedFunction()
                 unlock();
             }
 
+            client.send("ping\r\n");
+
             std::string mes = client.receive();
-            if (!mes.empty()) {
+            if (mes.size()) {
+                std::wstring s = cv.from_bytes(mes);
+                ofLog(OF_LOG_NOTICE, "Recived message: %s", s.c_str());
                 lock();
-                in_mess.push(mes);
+                in_mess.push(s);
                 unlock();
             }
         }
@@ -50,7 +59,7 @@ void botClient::send(std::string mes)
 
 bool botClient::check() const
 {
-    return in_mess.empty();
+    return !in_mess.empty();
 }
 
 bool botClient::is_connected()
@@ -58,9 +67,9 @@ bool botClient::is_connected()
     return client.isConnected();
 }
 
-std::string botClient::get()
+std::wstring botClient::get()
 {
-    std::string res;
+    std::wstring res;
     if (!in_mess.empty()) {
         res = in_mess.front();
         in_mess.pop();

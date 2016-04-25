@@ -13,7 +13,7 @@ void ofApp::setup() {
     std::unique_ptr<AbstactMorpher> tmp(new CPU_Morpher("data\\"));
     speaker = new SpeakerSAPI();
     speaker->init();
-    speaker->set_voice(1);
+    speaker->set_voice(2);
     morpher = tmp.release();
 
 	gui.setup("par_group");
@@ -41,6 +41,10 @@ void ofApp::update() {
 	w2.set(speaker->get_curren_w());
 	morpher->set_current(v1, w1 * .5, v2, w2 * .5);
 	morpher->update();
+
+    if (client.check() && speaker->get_state() == SP_READY) {
+        speaker->speak(client.get());
+    }
 }
 
 //--------------------------------------------------------------

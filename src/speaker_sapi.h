@@ -16,6 +16,8 @@ public:
     virtual void update() override;
     virtual void speak(std::wstring) override;
     virtual speaking_state init() override;
+    virtual speaking_state get_state() const;
+
 
 private:
     std::wstring m_text;

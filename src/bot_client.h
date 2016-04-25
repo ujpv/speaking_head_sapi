@@ -3,6 +3,7 @@
 #include "ofThread.h"
 #include "ofxNetwork.h"
 
+
 class botClient: public ofThread
 {
 public:
@@ -12,12 +13,12 @@ public:
     void send(std::string mes);
     bool check() const;
     bool is_connected();
-    std::string get();
+    std::wstring get();
     ~botClient();
 
 private:
     ofxTCPClient client;
-    std::queue<std::string> in_mess;
+    std::queue<std::wstring> in_mess;
     std::queue<std::string> out_mess;
     std::string ip;
     int port;

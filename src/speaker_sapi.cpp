@@ -89,6 +89,11 @@ speaking_state SpeakerSAPI::init() {
     ofLog(OF_LOG_NOTICE, std::string(voice_list.begin(), voice_list.end()).c_str(), m_voices_ids.size());
 }
 
+speaking_state SpeakerSAPI::get_state() const
+{
+    return m_state;
+}
+
 int SpeakerSAPI::get_voice_count() const
 {
     return m_voices_names.size();
@@ -199,18 +204,6 @@ void SpeakerSAPI::update()
         m_stopwath.reset();
         m_state = SP_SPEAKING;
         return;
-
-        /*
-     //   SPEVENT event;
-        memset(&event, 0, sizeof(SPEVENT));
-        if (cpVoiceMute->GetEvents(1, &event, NULL) == S_OK) {
-            if (event.eEventId == SPEI_START_INPUT_STREAM) {
-                m_state = SP_SPEAKING;
-                m_stopwath.reset();
-            }
-        }
-        return;
-        */
 
     case SP_SPEAKING:
         if (m_stopwath.get_elapsed() >= m_total_dur) {

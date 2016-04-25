@@ -20,6 +20,7 @@ public:
     virtual int get_voice_count() const = 0;
     virtual std::wstring get_voice_name(int i) const = 0;
     virtual bool set_voice(int i) = 0;
+    virtual speaking_state get_state() const = 0;
 
     int     get_current() const;
     int     get_previous() const;
